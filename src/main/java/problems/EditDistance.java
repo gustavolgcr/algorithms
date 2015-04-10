@@ -28,6 +28,7 @@ public class EditDistance {
 		}
 		
 		for(int i=1; i<m; i++) {
+			
 			for(int j=1; j<n; j++) {
 				
 				int a = e[i-1][j-1] + diff(x[i], x[j]);
@@ -37,19 +38,17 @@ public class EditDistance {
 				if(a <= Math.min(b, c)) {
 					e[i][j] = a;
 				} else {
-					if(b <= c){
+					if(b <= c) {
 						e[i][j] = b;
 					} else {
 						e[i][j] = c;
 					}
-					
 				}
-				
 			}
 		}
 		
 		return e[m][n];
-		
+	
 	}
 	
 	public static void main(String [ ] args) {
